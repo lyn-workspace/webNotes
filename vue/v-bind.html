@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>使用v-bind进行演示</title>
+	</head>
+	<body>
+		<div id="app">
+
+			<a v-bind:href="link">百度一下</a>
+			<span v-bind:class="{active:isActive,'text-danger':hasError}" 
+			:style="{color:color1,fontSize:size}">大家好, 才是真的好</span>
+
+
+			</div<>
+	</body>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		let vue = new Vue({
+			el: "#app",
+			data: {
+				link: "https://baidu.com",
+				isActive: true,
+				hasError: true,
+				color1: 'red',
+				size: "10px"
+				
+			},
+
+			methods: {
+			
+
+			}
+		});
+	</script>
+</html>
