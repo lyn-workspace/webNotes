@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+
+	<script>
+		// 在es6之前, 我们无法给一个函数参数设置默认值,只能采用通用的写法
+		function add(a, b) {
+
+			// 判断B 是否为空,为空则给默认值
+
+
+			b = b || 1;
+			return a + b;
+		}
+		// 传一个参数
+		console.log(add(1));
+
+		// 现在可以这么写,直接给参数上加上默认值,没传的话就自动使用默认值
+
+		function add2(a, b = 1) {
+
+			return a + b;
+		}
+		console.log(add2(1));
+
+
+
+		//不定参
+		function test3(...values) {
+
+			console.log(values.length);
+		}
+		test3(1, 2);
+		test3(2, 3, 4)
+
+		//箭头函数
+		//以前声明一个方法
+		var print = function(obj) {
+			console.log(obj);;
+		}
+		//现在
+		var print2 = obj => console.log(obj);
+
+		print2("hello");
+
+
+		var sum = function(a, b) {
+
+			c = a + b;
+			return c;
+		}
+
+		var sum2 = (a, b) => a + b;
+		console.log(sum2(1, 2));
+
+		var sum3 = (a, b) => {
+			c = a + b;
+			return c;
+		}
+		console.log(sum3(2, 3));
+
+
+
+		const person = {
+			name: "张三",
+			age: 12,
+			language: ['java', 'js', 'css']
+		}
+
+		function hello(person) {
+			console.log('hello,' + person.name);
+		}
+
+		var hello2 = ({
+			name
+		}) => console.log("hello," + name);
+		hello2(person);
+	</script>
+</html>

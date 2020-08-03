@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>结构表达式</title>
+	</head>
+	<body>
+	</body>
+
+	<script>
+		//数组结构
+		let arr = [1, 2, 3];
+		let a = arr[0];
+		let b = arr[1];
+		let c = arr[2];
+		console.log(a, b, b);
+		let [d, e, f] = arr;
+		console.log(d, e, f);
+
+		/**
+		 * 运行结果:
+		 * 1 2 2
+		 * 1 2 3
+		 */
+		// 对象结构
+		const persion = {
+			name: "zhangsan",
+			age: 12,
+			language: ['java', 'js', 'python']
+		}
+
+		// 对象结构
+		const {
+			name: Name,
+			// 当结构的key:value的值不一样的时候,使用冒号区分,当一样的时候, 冒号可以忽略
+			age,
+			language
+		} = persion;
+		console.log(Name, age, language);
+		/**
+		 * 运行结果:
+		 * zhangsan 12 (3) ["java", "js", "python"]
+		 */
+
+		// 字符串扩展
+		let str = "hello world"
+		console.log(str.startsWith("hello"));
+		console.log(str.endsWith("world"));
+		console.log(str.includes("e"));
+		console.log(str.includes("hello"));
+
+		/**
+		 * 运行结果:
+		 * true
+		 * true
+		 * true
+		 * true
+		 */
+
+
+		//字符串模板
+		let template = ` <div >
+			<span > 我只是一个span < /span> 
+			/div>`
+
+		console.log(template)
+		/**
+		 * 运行结果:
+		 *  <div >
+			<span > 我只是一个span < /span> 
+			/div>
+		 */
+
+
+		//字符串插入变量和表达式,变量名写在${}中, ${} 中可以放入javaScript 表达式
+		function fun() {
+			return "这是一个函数";
+		}
+
+
+		let info = `我是${Name},今年${age}, 我想说:${fun()}`
+		console.log(info);
+		/**
+		 * 运行结果:
+		 * 我是zhangsan,今年12, 我想说:这是一个函数
+		 */
+	</script>
+</html>
