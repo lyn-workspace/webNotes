@@ -8,10 +8,7 @@
 		<div id="app">
 
 			<a v-bind:href="link">百度一下</a>
-			<span v-bind:class="{active:isActive,'text-danger':hasError}" 
-			:style="{color:color1,fontSize:size}">大家好, 才是真的好</span>
-
-
+			<span v-bind:class="{active:isActive,'text-danger':hasError}" :style="{color:color1,fontSize:size}">大家好, 才是真的好</span>
 			</div<>
 	</body>
 	<script src="./node_modules/vue/dist/vue.js"></script>
@@ -23,12 +20,12 @@
 				isActive: true,
 				hasError: true,
 				color1: 'red',
-				size: "10px"
-				
+				size: "100px"
+
 			},
 
 			methods: {
-			
+
 
 			}
 		});
