@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue 过滤器</title>
+	</head>
+	<body>
+		<div id="app">
+
+			<!-- 过滤器通常用来处理文本格式化的操作,过滤器可以用在两个地方: 双花括号插值和v-bind 表达式-->
+			<ul>
+
+				<li v-for="user in users">
+					{{user.name}} ==> {{user.age}} ==>{{user.gender == 1 ? "男":"女"}} ==> {{user.gender | genderFilter}} ==> {{user.gender | gFilter}} 
+					<!-- 这里的| 表示管道,将--user.gender的值交给genderFilter -->
+
+
+				</li>
+
+
+			</ul>
+			</div<>
+	</body>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		// 全局过滤器
+
+		Vue.filter("gFilter", function(val) {
+
+			if (val == 1) {
+				return "男..."
+			} else if (val == 0) {
+
+				return "女..."
+			}
+		})
+		let vue = new Vue({
+			el: "#app",
+			data: {
+
+
+				users: [{
+						name: "张三",
+						age: 18,
+						gender: '1'
+					},
+					{
+						name: "李四",
+						age: 26,
+						gender: '0'
+					}, {
+						name: "王五",
+						age: 35,
+						gender: '1'
+					}, {
+						name: "赵六",
+						age: 48,
+						gender: '1'
+					}
+
+				]
+			},
+
+			methods: {
+
+			},
+			filters: {
+				// filters 定义局部过滤器,只能在当前vue实例中使用
+				genderFilter(val) {
+					if (val == 1) {
+						return "男"
+					} else if (val == 0) {
+
+						return "女"
+					}
+				}
+			}
+		});
+	</script>
+</html>

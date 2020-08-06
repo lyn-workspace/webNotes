@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue的按钮事件绑定</title>
+	</head>
+	<body>
+		<div id="app">
+
+
+
+			<div style="border: 1px solid red; padding: 20px;" @click="hello">
+
+				大的div
+				<div style="border: 1px solid blue; padding: 20px;" @click="hello">
+					小的div
+					<<a href="http://baidu.com" @click.prevent.stop="hello">百度一下你就知道了</a>
+					<!--这里禁止了超链接的点击跳转事件,并且只会触发当前对象的操作 -->
+
+				</div>
+
+			</div>
+
+			</div<>
+	</body>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		let vue = new Vue({
+			el: "#app",
+			data: {},
+
+			methods: {
+
+				hello() {
+
+					alert("别点我");
+				}
+			}
+		});
+	</script>
+</html>

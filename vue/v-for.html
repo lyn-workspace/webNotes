@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue的v-for演示</title>
+	</head>
+	<body>
+		<div id="app">
+
+			<li v-for="(user,index) in users" :key="user.name" v-if="user.gender == '女'">
+
+				<!-- 1. 显示user信息:v-for="item in items" -->
+				当前索引:{{index}} ==>{{user.name}}==>{{user.gender}} =>{{user.age}}
+				<!-- 2. 获取数组的下标: v-for="(item,index) in users"-->
+				<!-- 3. 遍历对象：
+				   v-for="value in object"
+				   v-for = "(value,key) in object"
+				   v-for = "(value,key,index) in object"
+				
+				-->
+				<br>
+				对象信息
+				<br>
+				<span v-for="(v,k,i) in user">
+					{{k}} ==>{{v}} =>{{i}} <br>
+				</span>
+			</li>
+
+
+			<!-- 4. 遍历的时候,加上:key 来区分不同的数据,提高vue 的渲染效率-->
+			<ul>
+				<li v-for="(num,index) in nums" :key="index">
+					{{num}}
+				</li>
+
+			</ul>
+			</div<>
+	</body>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		let vue = new Vue({
+			el: "#app",
+			data: {
+
+				users: [{
+						name: "张三",
+						age: 18,
+						gender: '男'
+					},
+					{
+						name: "李四",
+						age: 26,
+						gender: '女'
+					}, {
+						name: "王五",
+						age: 35,
+						gender: '男'
+					}, {
+						name: "赵六",
+						age: 48,
+						gender: '男'
+					}
+
+				],
+				nums: [2, 3, 5, 2, 1]
+
+
+			},
+
+			methods: {
+
+			}
+		});
+	</script>
+</html>

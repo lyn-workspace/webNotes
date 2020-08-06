@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue双向绑定</title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="checkbox" v-model="language" value="java" />java<br>
+			<input type="checkbox" v-model="language" value="python" />python<br>
+			<input type="checkbox" v-model="language" value="go" />go<br>
+
+			选中了{{language.join(",s")}}
+			</div<>
+	</body>
+	<script src="./node_modules/vue/dist/vue.js"></script>
+	<script>
+		let vue = new Vue({
+			el: "#app",
+			data: {
+				
+				
+				language: []
+			},
+
+			methods: {
+
+			}
+		});
+	</script>
+</html>
