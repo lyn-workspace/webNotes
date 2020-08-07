@@ -49,7 +49,7 @@
 				loadText: {
 					loadmore: '轻轻上拉',
 					loading: '努力加载中',
-					nomore: '实在没有了'
+					nomore: '我是有底线的'
 				},
 				tabs: [{
 						name: "最新"
