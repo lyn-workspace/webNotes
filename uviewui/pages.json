@@ -22,22 +22,37 @@
 				"navigationBarTitleText": "个人中心"
 			}
 		},
-		{
-			"path": "pages/article/articles2",
-			"style": {
-				"navigationBarTitleText": "文章首页"
-			}
-		},
+
+		// 文章相关页面
 		{
 			"path": "pages/article/articles",
 			"style": {
-				"navigationBarTitleText": "文章首页"
+				"navigationBarTitleText": "文章列表"
 			}
 		},
 		{
 			"path": "pages/article/articleInfo",
 			"style": {
 				"navigationBarTitleText": "文章首页详情"
+			}
+		},{
+			"path": "pages/article/searchResultList",
+			"style": {
+				"navigationBarTitleText": "文章搜索列表"
+			}
+		},
+
+		// 资讯相关页面
+		{
+			"path": "pages/news/newsList",
+			"style": {
+				"navigationBarTitleText": "资讯列表"
+			}
+		},
+		{
+			"path": "pages/news/newsInfo",
+			"style": {
+				"navigationBarTitleText": "资讯详情"
 			}
 		}
 	],
